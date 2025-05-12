@@ -1,169 +1,160 @@
 :root {
-    --main-color: #071F36;
-    --accent-color: #F1BA44;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--main-color);
-    color: white;
-    overflow-x: hidden;
-  }
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(7, 31, 54, 0.8);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 2rem;
-    z-index: 1000;
-  }
-  
-  nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-color);
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    color: var(--accent-color);
-  }
-  
-  /* Main hero section */
-  .hero-slider {
-    position: relative;
-    width: 100%;
-    height: 85vh; /* was 100vh */
-    margin-top: 60px; /* Push down to make room for nav */
-    overflow: hidden;
-    
-  }
-  
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  
-  .slide.active {
-    opacity: 1;
-  }
-  
-  
-  
-  
-  .hero-text {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    transform: translateY(-30%);
-    color: white;
-    text-align: left;
-    z-index: 2;
-    background: none;
-    padding: 0;
-  }
-  
-  .hero-text h1 {
-    font-size: 4rem;
-    font-weight: bold;
-  }
-  
-  .hero-text p {
-    font-size: 1.5rem;
-  }
-  
-  
-  .info-section {
-    padding: 4rem 2rem;
-    background-color: #0C2A45;
-    text-align: center;
-  }
-  
-  .footer {
-    background-color: #061829;
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #ccc;
-  }
-  
-  .footer a {
-    color: var(--accent-color);
-    text-decoration: none;
-    margin: 0 0.5rem;
-  }
-  
+  --main-color: #1a237e;       /* Navy Blue */
+  --accent-color: #b71c1c;     /* Crimson Red */
+  --text-light: #f0f0f0;       /* Light text */
+  --bg-dark: #121a3a;          /* Deep navy for depth */
+}
 
-  /*scroll*/
-  body {
-    margin: 0;
-    font-family: system-ui, sans-serif;
-    overflow-x: hidden;
-    background: #071F36;
-  }
-  
-  .scroll-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .scroll-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #071F36;
-    transition: background 0.5s;
-  }
-  
-  .scroll-section:nth-child(2) { background-color: #0D2A45; }
-  .scroll-section:nth-child(3) { background-color: #143B5E; }
-  .scroll-section:nth-child(4) { background-color: #1A4B75; }
-  
-  .scroll-content h2 {
-    font-size: 2.5rem;
-    color: #F1BA44;
-    margin: 0;
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  
-  .scroll-content p {
-    font-size: 1.2rem;
-    color: #ffffff;
-    max-width: 600px;
-    margin-top: 1rem;
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--main-color);
+  color: var(--text-light);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(18, 26, 58, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+nav .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+nav .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav .logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-color);
+}
+
+.nav-links .divider {
+  color: #888;
+  pointer-events: none;
+}
+
+/* Hero slider */
+.hero-slider {
+  margin-top: 80px;
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-slider img.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.hero-slider img.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: white;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  border-left: 5px solid var(--accent-color);
+  max-width: 60%;
+  border-radius: 8px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  color: #e0e0e0;
+}
+
+/* Info section */
+.info-section {
+  padding: 4rem 2rem;
+  background-color: var(--bg-dark);
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.info-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #cccccc;
+}
+
+/* Footer */
+.footer {
+  background-color: #0d152f;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
