@@ -2,7 +2,7 @@
   --main-color: #1a237e;       /* Navy Blue */
   --accent-color: #b71c1c;     /* Crimson Red */
   --text-light: #f0f0f0;       /* Light text */
-  --bg-dark: #121a3a;          /* Deep navy for depth */
+  --bg-dark: #121a3a;          /* Deeper blue background */
 }
 
 * {
@@ -19,12 +19,22 @@ body, html {
   scroll-behavior: smooth;
 }
 
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar */
 nav.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(18, 26, 58, 0.9);
+  background-color: rgba(18, 26, 58, 0.95);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +47,6 @@ nav .logo a {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--text-light);
 }
 
 nav .logo img {
@@ -73,7 +82,7 @@ nav .logo span {
   pointer-events: none;
 }
 
-/* Hero slider */
+/* Hero Slider */
 .hero-slider {
   margin-top: 80px;
   position: relative;
@@ -121,7 +130,7 @@ nav .logo span {
   color: #e0e0e0;
 }
 
-/* Info section */
+/* Info Section */
 .info-section {
   padding: 4rem 2rem;
   background-color: var(--bg-dark);
@@ -141,6 +150,36 @@ nav .logo span {
   color: #cccccc;
 }
 
+/* Scroll Sections for MUN page */
+.scroll-container {
+  padding: 100px 2rem 3rem;
+  background-color: var(--main-color);
+}
+
+.scroll-section {
+  margin-bottom: 4rem;
+  background-color: var(--bg-dark);
+  padding: 2rem;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  opacity: 0;
+}
+
+.scroll-section:hover {
+  background-color: rgba(183, 28, 28, 0.2);
+}
+
+.scroll-section h2 {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.scroll-section p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
 /* Footer */
 .footer {
   background-color: #0d152f;
@@ -152,9 +191,47 @@ nav .logo span {
 
 .footer a {
   color: var(--accent-color);
-  text-decoration: none;
 }
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  nav .logo span {
+    font-size: 1.2rem;
+  }
+
+  .hero-text {
+    max-width: 90%;
+    left: 5%;
+    padding: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .scroll-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .scroll-section p {
+    font-size: 1rem;
+  }
 }
